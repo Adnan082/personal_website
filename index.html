@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>CheemaTech | Adnan Cheema — Software Engineer</title>
+    <meta name="description"    content="Adnan Cheema — Software Engineer specialising in AI, Machine Learning, and Data Engineering. Building intelligent systems that make a real impact." />
+    <meta name="keywords"       content="Adnan Cheema, Software Engineer, AI, Machine Learning, Data Science, Python, CheemaTech" />
+    <meta name="author"         content="Adnan Cheema" />
+    <meta name="theme-color"    content="#07070f" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content="CheemaTech | Adnan Cheema — Software Engineer" />
+    <meta property="og:description" content="Software Engineer specialising in AI &amp; Data. Explore projects and get in touch." />
+    <meta property="og:locale"      content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary" />
+    <meta name="twitter:title"       content="CheemaTech | Adnan Cheema" />
+    <meta name="twitter:description" content="Software Engineer — AI, ML & Data." />
+
+    <!-- Inline favicon (no extra request) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%237c3aed'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='900' font-size='14' fill='white'>CT</text></svg>" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+    <!-- ============================================
+         PRELOADER
+         ============================================ -->
+    <div id="preloader" aria-hidden="true">
+        <div class="preloader-logo">
+            <span class="pl-bracket">&lt;</span>CT<span class="pl-bracket">/&gt;</span>
+        </div>
+        <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+
+    <!-- Custom cursor (desktop only) -->
+    <div id="cursor"       aria-hidden="true"></div>
+    <div id="cursor-ring"  aria-hidden="true"></div>
+
+    <!-- Back to top -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- ============================================
+         HEADER / NAV
+         ============================================ -->
+    <header class="header" role="banner">
+        <nav class="nav" id="navbar" aria-label="Primary navigation">
+            <div class="nav__inner">
+
+                <a href="#home" class="nav__logo" aria-label="CheemaTech home">
+                    <span class="nav__bracket">&lt;</span>CheemaTech<span class="nav__bracket">/&gt;</span>
+                </a>
+
+                <ul class="nav__list" id="navList" role="list">
+                    <li><a href="#about"    class="nav__link">About</a></li>
+                    <li><a href="#skills"   class="nav__link">Skills</a></li>
+                    <li><a href="#projects" class="nav__link">Projects</a></li>
+                    <li><a href="#contact"  class="nav__link">Contact</a></li>
+                </ul>
+
+                <button class="nav__hamburger" id="hamburger"
+                        aria-label="Toggle navigation" aria-expanded="false"
+                        aria-controls="navList">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ============================================
+             HERO
+             ============================================ -->
+        <section class="hero" id="home" aria-label="Introduction">
+
+            <!-- Animated canvas background -->
+            <canvas id="starsCanvas" aria-hidden="true"></canvas>
+
+            <!-- Ambient orbs -->
+            <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
+            <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
+            <div class="hero__grid"              aria-hidden="true"></div>
+
+            <div class="hero__inner">
+                <!-- Left: text -->
+                <div class="hero__text">
+                    <div class="hero__badge" aria-label="Status: available for opportunities">
+                        <span class="hero__badge-dot"></span>
+                        Available for opportunities
+                    </div>
+
+                    <h1 class="hero__title">
+                        Hi, I'm<br>
+                        <span class="u-gradient">Adnan Cheema</span>
+                    </h1>
+
+                    <p class="hero__subtitle" id="typedSubtitle" aria-live="polite">
+                        Software Engineer&nbsp;|&nbsp;AI &amp; Data Enthusiast
+                    </p>
+
+                    <p class="hero__description">
+                        Building intelligent systems and data-driven solutions that transform complex problems
+                        into elegant, impactful software.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a href="#projects" class="btn btn--primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                            View Projects
+                        </a>
+                        <a href="#contact" class="btn btn--outline">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            Contact Me
+                        </a>
+                    </div>
+
+                    <div class="hero__stats" aria-label="Quick stats">
+                        <div class="hero__stat">
+                            <span class="hero__stat-num" data-target="3">0</span><span class="hero__stat-plus">+</span>
+                            <span class="hero__stat-lbl">Years Exp.</span>
+                        </div>
+                        <div class="hero__stat-div" aria-hidden="true"></div>
+                        <div class="hero__stat">
+                            <span class="hero__stat-num" data-target="10">0</span><span class="hero__stat-plus">+</span>
+                            <span class="hero__stat-lbl">Projects</span>
+                        </div>
+                        <div class="hero__stat-div" aria-hidden="true"></div>
+                        <div class="hero__stat">
+                            <span class="hero__stat-num" data-target="5">0</span><span class="hero__stat-plus">+</span>
+                            <span class="hero__stat-lbl">Tech Stacks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: animated code card -->
+                <div class="hero__visual" aria-hidden="true">
+                    <div class="code-card">
+                        <div class="code-card__header">
+                            <div class="code-card__dots">
+                                <span class="dot dot--red"></span>
+                                <span class="dot dot--yellow"></span>
+                                <span class="dot dot--green"></span>
+                            </div>
+                            <span class="code-card__filename">adnan.py</span>
+                            <span class="code-card__lang">Python</span>
+                        </div>
+                        <pre class="code-card__body" id="codeDisplay" aria-hidden="true"></pre>
+                    </div>
+                    <div class="hero__float hero__float--1">🤖 Machine Learning</div>
+                    <div class="hero__float hero__float--2">📊 Data Engineering</div>
+                </div>
+            </div>
+
+            <a href="#about" class="hero__scroll" aria-label="Scroll to About section">
+                <div class="hero__scroll-mouse">
+                    <div class="hero__scroll-wheel"></div>
+                </div>
+            </a>
+        </section>
+
+        <!-- ============================================
+             ABOUT
+             ============================================ -->
+        <section class="about section" id="about" aria-labelledby="about-title">
+            <div class="container">
+
+                <header class="section__header" data-animate>
+                    <span class="section__tag">Who I Am</span>
+                    <h2 class="section__title" id="about-title">About Me</h2>
+                    <p class="section__sub">Passionate about turning data into decisions</p>
+                </header>
+
+                <div class="about__grid" data-animate>
+                    <!-- Bio -->
+                    <div class="about__bio">
+                        <p>
+                            I'm a passionate Software Engineer with a deep focus on <strong>Artificial Intelligence</strong>,
+                            <strong>Machine Learning</strong>, and <strong>Data Engineering</strong>. I love transforming raw,
+                            messy data into actionable insights and building intelligent systems that solve real-world problems at scale.
+                        </p>
+                        <p>
+                            With hands-on experience across Python, SQL, and modern ML frameworks, I bridge the gap between
+                            data science research and production-ready software. Whether it's designing ETL pipelines,
+                            fine-tuning language models, or architecting cloud-native applications — I bring both technical
+                            depth and business perspective.
+                        </p>
+                        <p>
+                            My goal: build technology that is not only powerful, but <em>ethical</em>, <em>scalable</em>,
+                            and genuinely impactful.
+                        </p>
+                        <div class="about__tags" role="list" aria-label="Interest areas">
+                            <span class="tag" role="listitem">🤖 AI / ML</span>
+                            <span class="tag" role="listitem">📊 Data Science</span>
+                            <span class="tag" role="listitem">🐍 Python</span>
+                            <span class="tag" role="listitem">☁️ Cloud</span>
+                            <span class="tag" role="listitem">🔍 Analytics</span>
+                            <span class="tag" role="listitem">🔧 Engineering</span>
+                        </div>
+                    </div>
+
+                    <!-- Profile card -->
+                    <aside class="profile-card" aria-label="Profile summary">
+                        <div class="profile-card__avatar" aria-hidden="true">
+                            <div class="profile-card__initials">AC</div>
+                            <div class="profile-card__ring"></div>
+                        </div>
+                        <h3 class="profile-card__name">Adnan Cheema</h3>
+                        <p class="profile-card__role">Software Engineer</p>
+                        <hr class="profile-card__divider" aria-hidden="true" />
+                        <ul class="profile-card__info" role="list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                Available Remotely
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                                Open to Work
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                Computer Science
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                3+ Years Experience
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================
+             SKILLS
+             ============================================ -->
+        <section class="skills section" id="skills" aria-labelledby="skills-title">
+            <div class="container">
+
+                <header class="section__header" data-animate>
+                    <span class="section__tag">What I Know</span>
+                    <h2 class="section__title" id="skills-title">Tech Stack</h2>
+                    <p class="section__sub">Tools and technologies I work with daily</p>
+                </header>
+
+                <div class="skills__grid" data-animate>
+
+                    <div class="skill-group">
+                        <p class="skill-group__label"><span class="skill-group__dot"></span>Languages</p>
+                        <div class="skill-group__cards">
+                            <div class="skill-card"><span class="skill-card__icon">🐍</span><span class="skill-card__name">Python</span><span class="skill-bar" data-level="90"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">🗄️</span><span class="skill-card__name">SQL</span><span class="skill-bar" data-level="85"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">⚡</span><span class="skill-card__name">JavaScript</span><span class="skill-bar" data-level="70"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">📊</span><span class="skill-card__name">R</span><span class="skill-bar" data-level="65"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <p class="skill-group__label"><span class="skill-group__dot skill-group__dot--purple"></span>AI / Machine Learning</p>
+                        <div class="skill-group__cards">
+                            <div class="skill-card"><span class="skill-card__icon">🔥</span><span class="skill-card__name">TensorFlow</span><span class="skill-bar" data-level="80"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">⚙️</span><span class="skill-card__name">PyTorch</span><span class="skill-bar" data-level="75"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">🤖</span><span class="skill-card__name">Scikit-learn</span><span class="skill-bar" data-level="88"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">💬</span><span class="skill-card__name">NLP / LLMs</span><span class="skill-bar" data-level="78"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <p class="skill-group__label"><span class="skill-group__dot skill-group__dot--cyan"></span>Data &amp; Analytics</p>
+                        <div class="skill-group__cards">
+                            <div class="skill-card"><span class="skill-card__icon">🐼</span><span class="skill-card__name">Pandas / NumPy</span><span class="skill-bar" data-level="92"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">✨</span><span class="skill-card__name">Apache Spark</span><span class="skill-bar" data-level="72"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">📈</span><span class="skill-card__name">Tableau</span><span class="skill-bar" data-level="80"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">📊</span><span class="skill-card__name">Power BI</span><span class="skill-bar" data-level="75"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <p class="skill-group__label"><span class="skill-group__dot skill-group__dot--green"></span>Tools &amp; Platforms</p>
+                        <div class="skill-group__cards">
+                            <div class="skill-card"><span class="skill-card__icon">🔧</span><span class="skill-card__name">Git / GitHub</span><span class="skill-bar" data-level="90"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">🐳</span><span class="skill-card__name">Docker</span><span class="skill-bar" data-level="75"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">☁️</span><span class="skill-card__name">AWS / GCP</span><span class="skill-bar" data-level="70"></span></div>
+                            <div class="skill-card"><span class="skill-card__icon">🐧</span><span class="skill-card__name">Linux</span><span class="skill-bar" data-level="82"></span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PROJECTS
+             ============================================ -->
+        <section class="projects section" id="projects" aria-labelledby="projects-title">
+            <div class="container">
+
+                <header class="section__header" data-animate>
+                    <span class="section__tag">What I've Built</span>
+                    <h2 class="section__title" id="projects-title">Projects</h2>
+                    <p class="section__sub">A selection of recent work</p>
+                </header>
+
+                <div class="projects__grid" data-animate>
+
+                    <!-- Featured -->
+                    <article class="project-card project-card--featured" aria-label="Featured project: Solar Wind Dst Prediction System">
+                        <div class="project-card__glow" aria-hidden="true"></div>
+                        <div class="project-card__top">
+                            <div class="project-card__icon" aria-hidden="true">🌌</div>
+                            <span class="project-card__badge">Featured</span>
+                            <div class="project-card__links">
+                                <a href="https://github.com/Adnan082/Hybrid_Model_Solar_winds_Prediction" target="_blank" class="icon-btn" aria-label="View on GitHub" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-card__title">Solar Wind Dst Prediction System</h3>
+                        <p class="project-card__desc">
+                            Physics-informed 5-agent ML pipeline for geomagnetic storm forecasting trained on
+                            8.4M NASA observations. Fuses ODE solvers, Transformer &amp; LSTM deep learning,
+                            and reinforcement learning to predict Dst index with high accuracy.
+                        </p>
+                        <footer class="project-card__tech">
+                            <span class="pill">Python</span>
+                            <span class="pill">PyTorch</span>
+                            <span class="pill">Transformers</span>
+                            <span class="pill">LSTM</span>
+                            <span class="pill">Reinforcement Learning</span>
+                        </footer>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card" aria-label="Project: NASA Turbine Engine Fleet Monitor">
+                        <div class="project-card__top">
+                            <div class="project-card__icon" aria-hidden="true">✈️</div>
+                            <div class="project-card__links">
+                                <a href="https://github.com/Adnan082/NASA_Turbine_Engine" target="_blank" class="icon-btn" aria-label="View on GitHub" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-card__title">NASA Turbine Engine Fleet Monitor</h3>
+                        <p class="project-card__desc">
+                            Multi-agent predictive maintenance system for a fleet of 707 turbine engines.
+                            Combines physics-informed ML with uncertainty quantification and SHAP-based
+                            explainability to forecast remaining useful life before failure.
+                        </p>
+                        <footer class="project-card__tech">
+                            <span class="pill">Python</span>
+                            <span class="pill">XGBoost</span>
+                            <span class="pill">SHAP</span>
+                            <span class="pill">Scikit-learn</span>
+                            <span class="pill">Jupyter</span>
+                        </footer>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card" aria-label="Project: Customer Churn Prediction">
+                        <div class="project-card__top">
+                            <div class="project-card__icon" aria-hidden="true">📊</div>
+                            <div class="project-card__links">
+                                <a href="https://github.com/Adnan082/churn_prediction" target="_blank" class="icon-btn" aria-label="View on GitHub" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-card__title">Customer Churn Prediction</h3>
+                        <p class="project-card__desc">
+                            End-to-end ML pipeline predicting customer churn with ensemble methods and
+                            full model interpretability. Features automated feature engineering, class
+                            imbalance handling, and business-ready reporting with actionable insights.
+                        </p>
+                        <footer class="project-card__tech">
+                            <span class="pill">Python</span>
+                            <span class="pill">Scikit-learn</span>
+                            <span class="pill">XGBoost</span>
+                            <span class="pill">Pandas</span>
+                            <span class="pill">SHAP</span>
+                        </footer>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             CONTACT
+             ============================================ -->
+        <section class="contact section" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+
+                <header class="section__header" data-animate>
+                    <span class="section__tag">Let's Talk</span>
+                    <h2 class="section__title" id="contact-title">Get In Touch</h2>
+                    <p class="section__sub">I'd love to hear about your project or opportunity</p>
+                </header>
+
+                <div class="contact__body" data-animate>
+                    <p class="contact__intro">
+                        Whether you have a role to fill, a project to collaborate on, or just want to talk AI and
+                        tech — my inbox is always open. I'll get back to you within 24 hours.
+                    </p>
+                    <ul class="contact__list" role="list">
+
+                        <li>
+                            <a href="mailto:adnancheema917@gmail.com" class="contact-item" id="emailLink"
+                               aria-label="Email Adnan Cheema">
+                                <div class="contact-item__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div class="contact-item__text">
+                                    <span class="contact-item__label">Email</span>
+                                    <span class="contact-item__value" id="emailValue">adnancheema917@gmail.com</span>
+                                </div>
+                                <svg class="contact-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.linkedin.com/in/adnan-haider-cheema/" target="_blank" rel="noopener noreferrer"
+                               class="contact-item" aria-label="Connect on LinkedIn (opens in new tab)">
+                                <div class="contact-item__icon contact-item__icon--linkedin" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                </div>
+                                <div class="contact-item__text">
+                                    <span class="contact-item__label">LinkedIn</span>
+                                    <span class="contact-item__value">linkedin.com/in/adnancheema</span>
+                                </div>
+                                <svg class="contact-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://github.com/Adnan082" target="_blank" rel="noopener noreferrer"
+                               class="contact-item" aria-label="View GitHub profile (opens in new tab)">
+                                <div class="contact-item__icon contact-item__icon--github" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                                </div>
+                                <div class="contact-item__text">
+                                    <span class="contact-item__label">GitHub</span>
+                                    <span class="contact-item__value">github.com/Adnan082</span>
+                                </div>
+                                <svg class="contact-item__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__inner">
+                <a href="#home" class="footer__logo" aria-label="Back to top">
+                    <span class="nav__bracket">&lt;</span>CheemaTech<span class="nav__bracket">/&gt;</span>
+                </a>
+                <p class="footer__copy">&copy; 2026 CheemaTech. All rights reserved.</p>
+                <nav class="footer__nav" aria-label="Footer navigation">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

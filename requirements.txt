@@ -1,0 +1,25 @@
+# CheemaTech Portfolio — Python requirements
+# ──────────────────────────────────────────
+# The dev server (server.py) uses only stdlib — no installs needed.
+#
+# This file is here for:
+#   1. Tooling / linting (optional, uncomment what you want)
+#   2. Future backend features (e.g. a contact-form API with Flask)
+#
+# Setup:
+#   python -m venv venv
+#   venv\Scripts\activate        # Windows
+#   source venv/bin/activate     # Mac / Linux
+#   pip install -r requirements.txt
+
+# ── Dev tools (optional) ─────────────────
+# Uncomment any you'd like to use:
+
+# autopep8==2.3.1          # Auto-format Python files
+# flake8==7.1.0            # Linting
+# black==24.10.0           # Opinionated formatter
+
+# ── Future backend (uncomment to add a contact form API) ──────────
+# flask==3.1.0
+# flask-cors==5.0.0
+# python-dotenv==1.0.1
