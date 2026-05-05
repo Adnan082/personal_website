@@ -224,56 +224,8 @@ function initScrollAnimations() {
     });
 }
 
-/* ─── 5. Stars canvas ────────────────────── */
-function initStars() {
-    const canvas = $('#starsCanvas');
-    if (!canvas || prefersReducedMotion) return;
-
-    const ctx = canvas.getContext('2d');
-    let W, H, stars;
-
-    const STAR_COUNT = 120;
-
-    function resize() {
-        const hero = canvas.parentElement;
-        W = canvas.width  = hero.offsetWidth;
-        H = canvas.height = hero.offsetHeight;
-    }
-
-    function mkStar() {
-        return {
-            x:      Math.random() * W,
-            y:      Math.random() * H,
-            r:      Math.random() * 1.4 + 0.3,
-            alpha:  Math.random(),
-            speed:  Math.random() * 0.003 + 0.001,
-            phase:  Math.random() * Math.PI * 2,
-        };
-    }
-
-    function init() {
-        resize();
-        stars = Array.from({ length: STAR_COUNT }, mkStar);
-    }
-
-    function draw(t) {
-        ctx.clearRect(0, 0, W, H);
-
-        stars.forEach(s => {
-            s.alpha = 0.3 + 0.55 * Math.sin(t * s.speed * 1000 + s.phase);
-            ctx.beginPath();
-            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(200 210 255 / ${s.alpha.toFixed(2)})`;
-            ctx.fill();
-        });
-
-        requestAnimationFrame(draw);
-    }
-
-    init();
-    window.addEventListener('resize', debounce(init, 200));
-    requestAnimationFrame(draw);
-}
+/* ─── 5. Stars canvas — replaced by CSS dot grid ── */
+function initStars() { /* no-op: background handled by CSS */ }
 
 /* ─── 6. Code card typewriter ────────────── */
 function initCodeTypewriter() {
@@ -284,24 +236,25 @@ function initCodeTypewriter() {
     }
 
     const lines = [
-        `<span class="t-kw">class</span> <span class="t-cls">AdnanCheema</span>:`,
-        `    role   <span class="t-op">=</span> <span class="t-str">"Software Engineer"</span>`,
-        `    focus  <span class="t-op">=</span> [<span class="t-str">"AI"</span>, <span class="t-str">"Data"</span>, <span class="t-str">"ML"</span>]`,
-        `    status <span class="t-op">=</span> <span class="t-str">"open_to_work"</span>`,
+        `<span class="t-kw">import</span> torch`,
+        `<span class="t-kw">import</span> numpy <span class="t-kw">as</span> np`,
         ``,
-        `    <span class="t-kw">def</span> <span class="t-fn">solve</span>(self, problem):`,
-        `        <span class="t-kw">return</span> self.<span class="t-fn">build</span>(`,
-        `            self.<span class="t-fn">think</span>(problem)`,
+        `<span class="t-kw">class</span> <span class="t-cls">PhysicsMLModel</span>(nn.Module):`,
+        `    <span class="t-cm"># Physics-Informed Neural Net</span>`,
+        ``,
+        `    <span class="t-kw">def</span> <span class="t-fn">__init__</span>(self, layers):`,
+        `        self.net   <span class="t-op">=</span> <span class="t-cls">MLP</span>(layers)`,
+        `        self.λ_pde <span class="t-op">=</span> <span class="t-num">1e-3</span>`,
+        ``,
+        `    <span class="t-kw">def</span> <span class="t-fn">forward</span>(self, x, t):`,
+        `        <span class="t-kw">return</span> self.net(`,
+        `            torch.cat([x, t], dim<span class="t-op">=-</span><span class="t-num">1</span>)`,
         `        )`,
         ``,
-        `    <span class="t-kw">def</span> <span class="t-fn">build</span>(self, idea):`,
-        `        <span class="t-kw">return</span> <span class="t-cls">Product</span>(`,
-        `            quality<span class="t-op">=</span><span class="t-str">"high"</span>,`,
-        `            impact<span class="t-op">=</span><span class="t-str">"real"</span>`,
-        `        )`,
-        ``,
-        `<span class="t-var">me</span> <span class="t-op">=</span> <span class="t-cls">AdnanCheema</span>()`,
-        `me.<span class="t-fn">get_coffee</span>()  <span class="t-cm"># Always ☕</span>`,
+        `    <span class="t-kw">def</span> <span class="t-fn">pde_loss</span>(self, u, x, t):`,
+        `        <span class="t-cm"># ∂u/∂t + N[u] = f(x,t)</span>`,
+        `        du_dt <span class="t-op">=</span> grad(u, t)`,
+        `        <span class="t-kw">return</span> torch.mean(du_dt<span class="t-op">**</span><span class="t-num">2</span>)`,
     ];
 
     let lineIdx = 0;
@@ -325,18 +278,20 @@ function initCodeTypewriter() {
 
 function buildStaticCode() {
     return [
-        `<span class="t-kw">class</span> <span class="t-cls">AdnanCheema</span>:`,
-        `    role   <span class="t-op">=</span> <span class="t-str">"Software Engineer"</span>`,
-        `    focus  <span class="t-op">=</span> [<span class="t-str">"AI"</span>, <span class="t-str">"Data"</span>, <span class="t-str">"ML"</span>]`,
-        `    status <span class="t-op">=</span> <span class="t-str">"open_to_work"</span>`,
+        `<span class="t-kw">import</span> torch`,
+        `<span class="t-kw">import</span> numpy <span class="t-kw">as</span> np`,
         ``,
-        `    <span class="t-kw">def</span> <span class="t-fn">solve</span>(self, problem):`,
-        `        <span class="t-kw">return</span> self.<span class="t-fn">build</span>(`,
-        `            self.<span class="t-fn">think</span>(problem)`,
-        `        )`,
+        `<span class="t-kw">class</span> <span class="t-cls">PhysicsMLModel</span>(nn.Module):`,
+        `    <span class="t-cm"># Physics-Informed Neural Net</span>`,
         ``,
-        `<span class="t-var">me</span> <span class="t-op">=</span> <span class="t-cls">AdnanCheema</span>()`,
-        `me.<span class="t-fn">get_coffee</span>()  <span class="t-cm"># Always ☕</span>`,
+        `    <span class="t-kw">def</span> <span class="t-fn">__init__</span>(self, layers):`,
+        `        self.net   <span class="t-op">=</span> <span class="t-cls">MLP</span>(layers)`,
+        `        self.λ_pde <span class="t-op">=</span> <span class="t-num">1e-3</span>`,
+        ``,
+        `    <span class="t-kw">def</span> <span class="t-fn">pde_loss</span>(self, u, x, t):`,
+        `        <span class="t-cm"># ∂u/∂t + N[u] = f(x,t)</span>`,
+        `        du_dt <span class="t-op">=</span> grad(u, t)`,
+        `        <span class="t-kw">return</span> torch.mean(du_dt<span class="t-op">**</span><span class="t-num">2</span>)`,
     ].join('\n');
 }
 
@@ -346,10 +301,10 @@ function initTypingSubtitle() {
     if (!el || prefersReducedMotion) return;
 
     const roles = [
-        'Software Engineer | AI & Data Enthusiast',
-        'Machine Learning Engineer',
-        'Data Engineer & Analyst',
-        'Python Developer',
+        'Physics-Informed ML Engineer',
+        'Data Scientist | MSc Applied Data Science',
+        'Deep Learning & Simulation Engineer',
+        'Space Weather & Predictive AI',
         'AI Systems Builder',
     ];
 
@@ -435,31 +390,8 @@ function initEmailCopy() {
     });
 }
 
-/* ─── 10. Card tilt ──────────────────────── */
-function initCardTilt() {
-    if (!isPointerFine || prefersReducedMotion) return;
-
-    const cards = $$('.project-card, .skill-group, .profile-card');
-    const MAX   = 5;
-
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transition = 'transform 0.12s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease';
-        });
-
-        card.addEventListener('mousemove', e => {
-            const { left, top, width, height } = card.getBoundingClientRect();
-            const dx = ((e.clientX - left) / width  - 0.5) * 2;
-            const dy = ((e.clientY - top)  / height - 0.5) * 2;
-            card.style.transform = `perspective(900px) rotateX(${-dy * MAX}deg) rotateY(${dx * MAX}deg) translateY(-5px)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transition = 'transform 0.45s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease';
-            card.style.transform  = '';
-        });
-    });
-}
+/* ─── 10. Card tilt — removed for performance ── */
+function initCardTilt() { /* no-op: tilt caused mousemove reflow on every frame */ }
 
 /* ─── 11. Smooth anchor scroll ───────────── */
 function initSmoothScroll() {
